@@ -1,11 +1,8 @@
-import io
 import streamlit as st
-import pandas as pd
-import csv
 
 from flows.entrada_csv import subir_csv
 from flows.entrada_manual import escribir_factura
-from Knowledge_base.rules import mostrar_reglas
+from knowledge_base.rules import mostrar_reglas
 
 def main():
 

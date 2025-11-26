@@ -1,5 +1,4 @@
 import re
-import pandas as pd
 
 def validar_factura_individual(factura):
 
