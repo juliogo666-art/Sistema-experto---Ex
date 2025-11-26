@@ -5,6 +5,7 @@ import csv
 
 from flows.entrada_csv import subir_csv
 from flows.entrada_manual import escribir_factura
+from Knowledge_base.rules import mostrar_reglas
 
 def main():
 
@@ -17,13 +18,21 @@ def main():
 
         st.success(f"Bienvenido {usuario}, ahora puedes subir o crear facutras")
 
-        opcion = st.radio("Selecciona modo de entrada:",["Subir archivo csv","Escribir factura"])
-        
+        st.header("Selección y ayuda", divider=True )
+
+        col1, col2 = st.columns([1,1])
+        with col1:
+            opcion = st.radio("Selecciona modo de entrada:",["Subir archivo csv","Escribir factura"])
+        with col2:
+            mostrar_reglas()
+
         if opcion == "Subir archivo csv" :
             # Requisito nº2 de entrada --> Entrada de un fichero de datos 
+            st.header("Cargar CSV", divider=True )
             subir_csv()
 
         elif opcion == "Escribir factura":
+            st.header("Escriba la factura", divider=True )
             escribir_factura()
 
     else:
