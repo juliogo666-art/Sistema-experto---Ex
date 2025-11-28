@@ -3,8 +3,8 @@ import pandas as pd
 
 from utils.limpieza_falta_datos_csv import limpiar_final_dataframe 
 from utils.limpiar_csv_bruto import limpiar_csv_bruto
-from utils.Segmentación_csv_facturas import mostrar_facturas_por_separado
-from utils.Validación_facturas import validar_factura_individual
+from utils.segmentación_csv_facturas import mostrar_facturas_por_separado
+from utils.validación_facturas import validar_factura_individual
 
 def subir_csv():
     facturas = st.file_uploader("Sube tu CSV de facturas", type=["csv"])
